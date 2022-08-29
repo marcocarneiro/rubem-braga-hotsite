@@ -23,6 +23,12 @@ time, mark, audio, video {
 body {
 	font-family: 'Roboto', sans-serif;
 	padding-top: 80px;
+	background-color: #def1ee;
+	background-image: url('../imagens/mancha.png');
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: 100% 200px;
+	background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -125,7 +131,7 @@ p{
 .conteudo, .conteudo-home{
 	width: 70%;
 	padding: 10px;
-	background-color: #68a79b;
+	background-color: rgba(100, 190, 150, 0.9);
 }
 
 .ico-logo {
@@ -134,7 +140,7 @@ p{
 }
 
 .modal{
-	position: fixed;
+	position: absolute;
 	top: 20%;
 	right: 0;
 	width: 200px;
@@ -153,10 +159,77 @@ p{
 	text-align: center;
 }
 
+/* Nos desktops o menu hamburguer é oculto */
+.menu-hamburguer{
+	display: none;
+}
+
+.menu-phone{
+	display: none;
+}
+
 #img-aula{
 	margin-top: -150px;
 }
 
 #img-escrita{
 	margin-top: -50px;
+}
+
+
+/* Layout para Tablets e celulares */
+@media only screen and (max-width: 992px) {
+	main{
+		width: 100%;
+		flex-direction: column-reverse;
+		justify-content: left;
+	}
+
+	aside, .conteudo-home, .conteudo{
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	nav{
+		display: none;
+	}
+
+	header{
+		padding: 0;
+	}
+
+	header h1 {
+		width: 60%;
+	}
+
+	.menu-hamburguer{
+		display: block;
+		width: 40px;
+		cursor: pointer;
+	}
+
+	.menu-phone{
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50%;
+		padding: 10px;
+		background-color: #fff;
+		z-index: 100;
+	}
+	.menu-phone ul{
+		padding: 0;
+		list-style: none;
+	}
+	.menu-phone ul li, .menu-phone ul li a{
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		margin-bottom: 2px;
+		text-indent: 10px;
+	}
+
 }
